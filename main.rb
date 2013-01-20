@@ -37,7 +37,7 @@ class Vendor < Amp::Vendor
   end
 
   def read_plugin?(p)
-    p['reviewSummary']['count'] > 0
+    true
   end
 
 end

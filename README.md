@@ -11,5 +11,5 @@ Usage
 
 Customize `main.rb`, then:
 
-  ./main.rb <vendor_id>
+    ./main.rb <vendor_id>
 
