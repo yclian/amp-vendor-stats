@@ -35,7 +35,7 @@ class Vendor < Amp::Vendor
       o += "\t"
     end
 
-    o += ("\u2605" * p['reviewSummary']['averageStars']) + "\t" +
+    o += p['reviewSummary']['averageStars'].round(4).to_s + "\t" +
          p['downloadCount'].to_s
 
     puts o
