@@ -14,6 +14,7 @@ class Vendor < Amp::Vendor
         o = p['name'] + "\t"
         o += Date.parse(v['releaseDate']).strftime('%Y-%m-%d')  + "\t"
         o += v['version'] + "\t"
+        o += v['license']['id'] + "\t"
         o += v['releasedBy'] ? v['releasedBy'] + "\t" : "\t"
 
         o += c['applicationName'] + "\t"
@@ -42,7 +43,7 @@ class Vendor < Amp::Vendor
 
 end
 
-puts "Name\tDate\tVersion\tAuthor\tApplication\tMin\tMax\tCompatibility?"
+puts "Name\tDate\tVersion\tLicense\tAuthor\tApplication\tMin\tMax\tCompatibility?"
 
 Vendor.new(
   ENV['AMP_URL'] || 'https://marketplace.atlassian.com',
