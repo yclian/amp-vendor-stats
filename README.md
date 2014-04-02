@@ -9,7 +9,11 @@ A simple scraper that pulls vendors and product details from Atlassian Marketpla
 Usage
 -----
 
-Customize `main.rb`, then:
+Use `plugins.rb` to generate a summary of plugin information.
 
-    ./main.rb <vendor_id>
+    ./plugins.rb <vendor_id>
+
+Use `releases.rb` to generate a report of plugin releases information.
+
+    ./releases.rb <vendor_id>
 
