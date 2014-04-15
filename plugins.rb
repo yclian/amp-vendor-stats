@@ -9,6 +9,12 @@ class Vendor < Amp::Vendor
 
     o = p['name'] + "\t"
 
+    if p.has_key? 'compatibleApplications'
+        o += p['compatibleApplications'].collect(){ |c| c['name'] }.join ':'
+        o += "\t"
+    end
+
+
     if p.has_key? 'categories'
         o += p['categories'].collect(){ |c| c['name'] }.join ':'
         o += "\t"
@@ -48,7 +54,7 @@ class Vendor < Amp::Vendor
 
 end
 
-puts "Name\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity"
+puts "Name\tProducts\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity"
 
 Vendor.new(
   ENV['AMP_URL'] || 'https://marketplace.atlassian.com',
