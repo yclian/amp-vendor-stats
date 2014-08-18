@@ -42,7 +42,9 @@ class Vendor < Amp::Vendor
     end
 
     o += p['reviewSummary']['averageStars'].round(4).to_s + "\t" +
-         p['downloadCount'].to_s
+         p['downloadCount'].to_s + "\t" +
+         p['activeInstalls']['totalInstalls'].to_s + "\t" +
+         p['activeInstalls']['totalUsers'].to_s
 
     puts o
 
@@ -54,7 +56,7 @@ class Vendor < Amp::Vendor
 
 end
 
-puts "Name\tProducts\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity"
+puts "Name\tProducts\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity\tInstalls\tUsers\n" if $config[:output] != 'salesforce'
 
 Vendor.new(
   ENV['AMP_URL'] || 'https://marketplace.atlassian.com',
