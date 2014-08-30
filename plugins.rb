@@ -56,7 +56,7 @@ class Vendor < Amp::Vendor
 
 end
 
-puts "Name\tProducts\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity\tInstalls\tUsers\n" if $config[:output] != 'salesforce'
+puts "Name\tProducts\tCategories\tLicense\tLast Release\tLast Review\tReleases\tReviews\tRating\tPopularity\tInstalls\tUsers\n" 
 
 Vendor.new(
   ENV['AMP_URL'] || 'https://marketplace.atlassian.com',
